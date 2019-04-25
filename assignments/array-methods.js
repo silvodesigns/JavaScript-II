@@ -94,7 +94,23 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Get the last name of each donator so we can print labels on their seats at the tables where
+//they will be sitting
+
+const labelNames = [];
+
+runners.forEach(function(item){
+    const lastName = item.last_name;
+    labelNames.push(lastName);
+});
+console.log(labelNames);
+
 
 // Problem 2
+// We want to know how many donated more than 200 so we can give them vip labels
+const vipLabels = runners.filter(function(business){
+    return business.donation > 200;
+});
+console.log(vipLabels);
 
 // Problem 3
