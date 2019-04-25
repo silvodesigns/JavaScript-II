@@ -114,3 +114,12 @@ const vipLabels = runners.filter(function(business){
 console.log(vipLabels);
 
 // Problem 3
+//We want to get the Email of each person so that we can add them to our email marketing campaign list
+
+const emails = [];
+
+runners.forEach(function(item){
+    const email = item.email;
+    emails.push(email);
+});
+console.log(emails);
