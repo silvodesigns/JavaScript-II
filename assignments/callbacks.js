@@ -36,26 +36,45 @@ getLength(items, function(length){
 
  ///////////////////////////////// last passes the last item of the array into the callback.
 function last(arr, cb) {
- 
   return cb(arr[`${arr.length - 1}`]);
 }
 last(items,function(lastItemOfArray){
   console.log(lastItemOfArray);
 });
 
- ////////////////////////////////// sumNums adds two numbers (x, y) and passes the result to the callback.
+ ////////////////////// sumNums adds two numbers (x, y) and passes the result to the callback.
 function sumNums(x, y, cb) {
- 
+  const total = x + y;
+  return cb(total);
 }
 
+sumNums(2,5, function(result){
+  console.log(result);
+});
+
+/////////////////////// multiplyNums multiplies two numbers and passes the result to the callback.
 function multiplyNums(x, y, cb) {
-  // multiplyNums multiplies two numbers and passes the result to the callback.
+  const total= x * y;
+  return cb(total);
+  
 }
 
-function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+multiplyNums(5,5,function(result){
+  console.log(result);
+});
+
+/////////////////// contains checks if an item is present inside of the given array/list.
+/////////////////// Pass true to the callback if it is, otherwise pass false.
+function contains(lookingForItem, arr, cb) {
+   arr.forEach(function findIt(listItem){ 
+     if(listItem == lookingForItem){
+       return cb(true);
+     } else { return cb(false);}
+   });
 }
+contains("Pencil", items, function(result){
+  console.log(result);
+});
 
 /* STRETCH PROBLEM */
 
