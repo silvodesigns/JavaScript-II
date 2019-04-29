@@ -1,6 +1,16 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function remember(number) {
+  return function() {
+      return number;
+  }
+}
+
+const returnedFunction = remember(5);
+
+console.log( returnedFunction() );
+
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
